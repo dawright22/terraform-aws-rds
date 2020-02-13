@@ -26,8 +26,8 @@ module "db" {
 
   identifier = "dr-demodb"
 
-  engine            = "sqlserver-ex"
-  engine_version    = "14.00.1000.169.v1"
+  engine            = "mysql"
+  engine_version    = "5.7"
   instance_class    = "db.t2.micro"
   allocated_storage = 20
   storage_encrypted = false
