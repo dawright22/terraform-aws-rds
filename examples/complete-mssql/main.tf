@@ -65,7 +65,7 @@ module "db" {
   deletion_protection = false
 
   # DB options
-  major_engine_version = "14.00"
+  major_engine_version = "5.7"
 
   options = []
 }
