@@ -24,15 +24,15 @@ data "aws_security_group" "default" {
 module "db" {
   source = "../../"
 
-  identifier = "demodb"
+  identifier = "dr-demodb"
 
   engine            = "sqlserver-ex"
   engine_version    = "14.00.1000.169.v1"
-  instance_class    = "db.t2.medium"
+  instance_class    = "db.t2.micro"
   allocated_storage = 20
   storage_encrypted = false
 
-  name     = null # "demodb"
+  name     = null # "dr-demodb"
   username = "demouser"
   password = "YourPwdShouldBeLongAndSecure!"
   port     = "1433"
@@ -46,7 +46,7 @@ module "db" {
   backup_retention_period = 0
 
   tags = {
-    Owner       = "user"
+    Owner       = "david wright"
     Environment = "dev"
   }
 
@@ -54,12 +54,12 @@ module "db" {
   subnet_ids = data.aws_subnet_ids.all.ids
 
   # Snapshot name upon DB deletion
-  final_snapshot_identifier = "demodb"
+  final_snapshot_identifier = "dr-demodb"
 
   create_db_parameter_group = false
   license_model             = "license-included"
 
-  timezone = "Central Standard Time"
+  timezone = "Australian Eastern Daylight Time"
 
   # Database Deletion Protection
   deletion_protection = false
