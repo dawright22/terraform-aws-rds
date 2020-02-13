@@ -57,7 +57,7 @@ module "db" {
   final_snapshot_identifier = "dr-demodb"
 
   create_db_parameter_group = false
-  license_model             = "license-included"
+  license_model             = "general-public-license"
 
   timezone = "AUS Eastern Standard Time"
 
