@@ -59,7 +59,7 @@ module "db" {
   create_db_parameter_group = false
   license_model             = "license-included"
 
-  timezone = "Australian Eastern Daylight Time"
+  timezone = "AUS Eastern Standard Time"
 
   # Database Deletion Protection
   deletion_protection = false
