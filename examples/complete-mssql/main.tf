@@ -35,7 +35,7 @@ module "db" {
   name     = null # "dr-demodb"
   username = "demouser"
   password = "YourPwdShouldBeLongAndSecure!"
-  port     = "1433"
+  port     = "3306"
 
   vpc_security_group_ids = [data.aws_security_group.default.id]
 
