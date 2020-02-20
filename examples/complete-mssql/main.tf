@@ -13,11 +13,11 @@ variable "vpc_id" {
 }
 
 data "aws_subnet_ids" "all" {
-  vpc_id = var.vpc_id.id
+  vpc_id = var.vpc_id
 }
 
 data "aws_security_group" "default" {
-  vpc_id = var.vpc_id.id
+  vpc_id = var.vpc_id
   name   = "terraform-multi-cloud-k8-demo-cluster"
 }
 
