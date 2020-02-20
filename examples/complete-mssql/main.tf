@@ -5,18 +5,23 @@ provider "aws" {
 ##############################################################
 # Data sources to get VPC, subnets and security group details
 ##############################################################
-data "aws_vpc" "default" {
-  default = true
+# data "aws_vpc" "default" {
+#   default = true
+# }
+
+variable "vpc_id" {
 }
 
 data "aws_subnet_ids" "all" {
-  vpc_id = data.aws_vpc.default.id
+  vpc_id = data.vpc_id.id
 }
 
 data "aws_security_group" "default" {
-  vpc_id = data.aws_vpc.default.id
-  name   = "default"
+  vpc_id = data.vpc_id.id
+  name   = "terraform-multi-cloud-k8-demo-cluster"
 }
+
+
 
 #####
 # DB
